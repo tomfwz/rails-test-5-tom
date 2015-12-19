@@ -6,6 +6,6 @@ describe School do
   end
 
   context 'validations' do
-    it { is_expected.to enumerize(:type).in(:university, :high_school, :secondary_school, :primary_school) }
+    it { is_expected.to enumerize(:category).in(:university, :high_school, :secondary_school, :primary_school) }
   end
 end
