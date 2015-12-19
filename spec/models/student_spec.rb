@@ -30,7 +30,7 @@ describe Student do
       SchoolMate.create(school: us, student: robin)
     }
 
-    it 'returns age of student' do
+    it 'returns schoolmate of tom' do
       expected = [robin.name, james.name, tom.name]
       expect(tom.schoolmates).to eq expected
     end
