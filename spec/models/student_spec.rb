@@ -15,4 +15,24 @@ describe Student do
       expect(student.age).to eq 22
     end
   end
+
+  describe '#schoolmates' do
+    let!(:us)     { create(:school, category: :university) }
+    let!(:lhp)    { create(:school, category: :high_school) }
+  
+    let!(:tom)    { create(:student, name: 'Tom Fwz', dob: '12 Feb 1993') }
+    let!(:james)  { create(:student, name: 'James Fwz', dob: '12 Feb 1993') }
+    let!(:robin)  { create(:student, name: 'Robin Fwz', dob: '12 Feb 1993') }
+
+    let!(:schoolmates) {
+      SchoolMate.create(school: us, student: tom)
+      SchoolMate.create(school: us, student: james)
+      SchoolMate.create(school: us, student: robin)
+    }
+
+    it 'returns age of student' do
+      expected = [robin.name, james.name, tom.name]
+      expect(tom.schoolmates).to eq expected
+    end
+  end
 end
