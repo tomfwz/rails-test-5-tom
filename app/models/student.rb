@@ -5,4 +5,8 @@ class Student < ActiveRecord::Base
   validates :name,  presence: true
   validates_date :dob, :before => lambda { 18.years.ago },
                        :before_message => "must be at least 18 years old"
+
+  def age
+    Time.now.year - dob.year
+  end
 end
