@@ -1,6 +1,4 @@
 class Student < ActiveRecord::Base
-  include Seeds::Student
-
   has_many :school_mates
   has_many :schools, through: :school_mates
 
@@ -10,5 +8,9 @@ class Student < ActiveRecord::Base
 
   def age
     Time.now.year - dob.year
+  end
+
+  def schoolmates
+    school_mates.students
   end
 end
