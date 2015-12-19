@@ -5,7 +5,7 @@ module Seeds::School
     def self.seed
       puts 'School'
       School.create({ name: 'University of Science', address: '227 Nguyen Van Cu', type: 'University' })
-      School.create({ name: 'Le Hong Phong', address: '225 Nguyen Van Cu', type: 'University' })
+      School.create({ name: 'Le Hong Phong', address: '225 Nguyen Van Cu' })
       puts 'School'
     end
   end
