@@ -3,6 +3,6 @@ class Student < ActiveRecord::Base
   has_many :schools, through: :school_mates
 
   validates :name,  presence: true
-  validates_date :date_of_birth, :before => lambda { 18.years.ago },
-                               :before_message => "must be at least 18 years old"
+  validates_date :dob, :before => lambda { 18.years.ago },
+                       :before_message => "must be at least 18 years old"
 end
