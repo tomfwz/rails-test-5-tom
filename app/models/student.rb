@@ -1,4 +1,6 @@
 class Student < ActiveRecord::Base
+  include Seeds::Student
+
   has_many :school_mates
   has_many :schools, through: :school_mates
 
