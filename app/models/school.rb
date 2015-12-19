@@ -1,5 +1,4 @@
 class School < ActiveRecord::Base
-  include Seeds::School
   extend Enumerize
   
   has_many :school_mates
